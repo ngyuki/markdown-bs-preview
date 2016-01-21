@@ -17,4 +17,13 @@ $(function(){
             });
         }
     }());
+
+    $('body').on('click', function(ev){
+        var elem = ev.target;
+        if (elem.tagName.toUpperCase() === 'A') {
+            if (/^(\w+:)?\/\//.test(elem.getAttribute('href'))) {
+                elem.target = '_blank';
+            }
+        }
+    });
 });
